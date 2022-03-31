@@ -42,6 +42,28 @@ function headless_setup() {
 add_action( 'after_setup_theme', 'headless_setup' );
 
 /**
+ * Disable feed.
+ */
+function headless_disable_feed() {
+	wp_die( __( 'No feed available, please visit our <a href="' . get_bloginfo( 'url' ) . '">Homepage</a>!', 'headless' ) );
+}
+
+add_action( 'do_feed', 'headless_disable_feed', 1 );
+add_action( 'do_feed_rdf', 'headless_disable_feed', 1 );
+add_action( 'do_feed_rss', 'headless_disable_feed', 1 );
+add_action( 'do_feed_rss2', 'headless_disable_feed', 1 );
+add_action( 'do_feed_atom', 'headless_disable_feed', 1 );
+add_action( 'do_feed_rss2_comments', 'headless_disable_feed', 1 );
+add_action( 'do_feed_atom_comments', 'headless_disable_feed', 1 );
+
+/**
  * Custom post types for this theme.
  */
 require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
+ * Load Headless Mode compatibility file.
+ */
+if ( defined( 'HEADLESS_MODE_CLIENT_URL' ) ) {
+	require get_template_directory() . '/inc/headless-mode.php';
+}
