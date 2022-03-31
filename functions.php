@@ -34,8 +34,8 @@ function headless_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary'   => esc_html__( 'Primary', 'headless' ),
-			'secondary' => esc_html__( 'Secondary', 'headless' ),
+			'header-menu' => esc_html__( 'Header Menu', 'headless' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'headless' ),
 		)
 	);
 }
