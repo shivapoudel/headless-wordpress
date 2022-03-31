@@ -1,0 +1,9 @@
+.*
+.*/
+*.md
+composer.*
+package-lock.json
+package.json
+vendor/
+node_modules/
+phpcs.xml.dist

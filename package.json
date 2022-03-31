@@ -1,0 +1,23 @@
+{
+  "name": "headless-wordpress",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Headless WordPress starter theme.",
+  "author": "Shiva Poudel",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "headless-wordpress"
+  ],
+  "homepage": "https://github.com/shivapoudel/headless-wordpress#readme",
+  "repository": "git+https://github.com/shivapoudel/headless-wordpress.git",
+  "bugs": {
+    "url": "https://github.com/shivapoudel/headless-wordpress/issues"
+  },
+  "scripts": {
+    "bundle": "dir-archiver --src . --dest ../headless.zip --exclude .DS_Store Thumbs.db .git .github .gitignore .distignore .npmrc .nvmrc README.md composer.json composer.lock phpcs.xml.dist vendor package.json package-lock.json yarn.lock node_modules"
+  },
+  "devDependencies": {
+    "dir-archiver": "1.2.0"
+  }
+}
